@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>io.enscene.testing.arquillian</groupId>
+		<artifactId>enscene-testing-arquillian-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>enscene-testing-arquillian-jetty-9</artifactId>
+
+	<properties>
+ 		<version.jetty-9>9.2.1.v20140609</version.jetty-9>
+		
+		<version.arquillian-jetty-embedded-9>1.0.0.Final-SNAPSHOT</version.arquillian-jetty-embedded-9>
+	</properties>
+
+	<packaging>pom</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.arquillian.container</groupId>
+			<artifactId>arquillian-jetty-embedded-9</artifactId>
+			<version>${version.arquillian-jetty-embedded-9}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-webapp</artifactId>
+			<version>${version.jetty-9}</version>
+		</dependency>
+		<!-- plus and naming requires for using JNDI -->
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-plus</artifactId>
+			<version>${version.jetty-9}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-annotations</artifactId>
+			<version>${version.jetty-9}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-deploy</artifactId>
+			<version>${version.jetty-9}</version>
+		</dependency>
+
+	</dependencies>
+</project>
