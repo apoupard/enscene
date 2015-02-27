@@ -19,4 +19,26 @@
 		<module>jetty-9</module>
 	</modules>
 
+	<properties>
+		<!-- depchain -->
+		<version.arquillian-bom>1.1.7.Final</version.arquillian-bom>
+		<version.shrinkwrap-resolver-bom>2.1.1</version.shrinkwrap-resolver-bom>
+		<version.arquillian-rest>1.0.0.Alpha3</version.arquillian-rest>
+		<version.resteasy>3.0.10.Final</version.resteasy>
+
+		<!-- tomcat-8 -->
+		<version.arquillian-tomcat>1.0.0.CR7</version.arquillian-tomcat>
+		<version.tomcat>8.0.9</version.tomcat>
+
+		<!-- jetty-8 -->
+		<version.jetty-8>8.1.15.v20140411</version.jetty-8>
+		<version.arquillian-jetty-embedded-8>1.0.0.Final-SNAPSHOT</version.arquillian-jetty-embedded-8>
+
+		<!-- jetty-9 -->
+		<version.jetty-9>9.2.1.v20140609</version.jetty-9>
+		<version.arquillian-jetty-embedded-9>1.0.0.Final-SNAPSHOT</version.arquillian-jetty-embedded-9>
+
+
+	</properties>
+
 </project>

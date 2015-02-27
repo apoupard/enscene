@@ -9,11 +9,6 @@
 
 	<artifactId>enscene-testing-arquillian-jetty-8</artifactId>
 
-	<properties>
- 		<version.jetty-8>8.1.15.v20140411</version.jetty-8>
-		<version.arquillian-jetty-embedded-8>1.0.0.Final-SNAPSHOT</version.arquillian-jetty-embedded-8>
-	</properties>
-
 	<packaging>pom</packaging>
 	<dependencies>
 		<dependency>
