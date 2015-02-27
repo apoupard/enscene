@@ -8,66 +8,62 @@ import com.google.common.base.Objects;
 
 class ServiceImpl implements Service {
 
-	private ServiceId id;
-	
-	private String path;
+  private ServiceId id;
 
-	public ServiceImpl() {
-	}
-	
-	public ServiceImpl(ServiceId id, String path) {
-		this.id = id;
-		this.path = path;
-	}
+  private String path;
 
-	ServiceImpl(Builder builder) {
-		this.id = builder.id;
-		this.path = builder.path;
-	}
+  public ServiceImpl() {}
 
-	@Override
-	@JsonProperty
-	public ServiceId getId() {
-		return id;
-	}
+  public ServiceImpl(ServiceId id, String path) {
+    this.id = id;
+    this.path = path;
+  }
 
-	@Override
-	@JsonProperty
-	public String getPath() {
-		return this.path;
-	}
+  ServiceImpl(Builder builder) {
+    this.id = builder.id;
+    this.path = builder.path;
+  }
 
-	public void setId(ServiceId id) {
-		this.id = id;
-	}
+  @Override
+  @JsonProperty
+  public ServiceId getId() {
+    return id;
+  }
 
-	public void setPath(String path) {
-		this.path = path;
-	}
+  @Override
+  @JsonProperty
+  public String getPath() {
+    return this.path;
+  }
 
-	@Override
-	public int hashCode() {
-		return Objects.hashCode(this.path);
-	}
+  public void setId(ServiceId id) {
+    this.id = id;
+  }
 
-	@Override
-	public boolean equals(Object obj) {
-		 if (obj == null) {  
-	         return false;  
-	      }  
-	      if (getClass() != obj.getClass()) {  
-	         return false;  
-	      }  
-	      final ServiceImpl other = (ServiceImpl) obj;  
-	      return equal(this.path, other.path);
-	}
+  public void setPath(String path) {
+    this.path = path;
+  }
 
-	@Override
-	public String toString() {
-		return toStringHelper(this)
-				.addValue(path)
-				.toString();
-	}
-	
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(this.path);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final ServiceImpl other = (ServiceImpl) obj;
+    return equal(this.path, other.path);
+  }
+
+  @Override
+  public String toString() {
+    return toStringHelper(this).addValue(path).toString();
+  }
+
 }
-

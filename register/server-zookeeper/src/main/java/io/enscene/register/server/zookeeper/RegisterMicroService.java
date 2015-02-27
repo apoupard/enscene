@@ -18,14 +18,14 @@ import io.enscene.register.server.zookeeper.service.impl.RegisterServiceCuratorI
 @ApplicationPath("")
 public class RegisterMicroService extends MicroService {
 
-	@Override
-	public void configure(Binder binder) {
-		binder.bind(ServiceRessource.class).to(ServiceResourceImpl.class);
-		
-		binder.bind(RegisterService.class).to(RegisterServiceCuratorImpl.class);
-		binder.bind(ZookeeperServer.class).toProvider(ZookeeperServerProvider.class);
-		binder.bind(CuratorFramework.class).toProvider(CuratorFrameworkProvider.class);
-		
-	}
+  @Override
+  public void configure(Binder binder) {
+    binder.bind(ServiceRessource.class).to(ServiceResourceImpl.class);
+
+    binder.bind(RegisterService.class).to(RegisterServiceCuratorImpl.class);
+    binder.bind(ZookeeperServer.class).toProvider(ZookeeperServerProvider.class);
+    binder.bind(CuratorFramework.class).toProvider(CuratorFrameworkProvider.class);
+
+  }
 
 }

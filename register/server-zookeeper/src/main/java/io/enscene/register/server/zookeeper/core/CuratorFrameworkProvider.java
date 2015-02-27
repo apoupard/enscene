@@ -9,29 +9,30 @@ import org.apache.curator.retry.RetryNTimes;
 
 public class CuratorFrameworkProvider implements Provider<CuratorFramework> {
 
-	private final ZookeeperServer server;
-	
-	private CuratorFramework client;
-	
-	@Inject
-	public CuratorFrameworkProvider(ZookeeperServer server) {
-		super();
-		this.server = server;
-	}
+  private final ZookeeperServer server;
 
-	@Override
-	public CuratorFramework get() {
-		if(client == null) {
-			client = initCuratorFramework();
-		}
-		return client;
-//		return initCuratorFramework();
-	}
+  private CuratorFramework client;
 
-	private CuratorFramework initCuratorFramework() {
-		CuratorFramework client = CuratorFrameworkFactory.newClient(server.getConnectUrl(), new RetryNTimes(5, 1000));
-		client.start();
-		return client;
-	}
+  @Inject
+  public CuratorFrameworkProvider(ZookeeperServer server) {
+    super();
+    this.server = server;
+  }
+
+  @Override
+  public CuratorFramework get() {
+    if (client == null) {
+      client = initCuratorFramework();
+    }
+    return client;
+    // return initCuratorFramework();
+  }
+
+  private CuratorFramework initCuratorFramework() {
+    CuratorFramework client =
+        CuratorFrameworkFactory.newClient(server.getConnectUrl(), new RetryNTimes(5, 1000));
+    client.start();
+    return client;
+  }
 
 }

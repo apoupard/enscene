@@ -14,41 +14,41 @@ import javax.ws.rs.core.MediaType;
 
 public class ServiceResourceImpl implements ServiceRessource {
 
-	private final RegisterService registerService;
-	
-	@Inject
-	public ServiceResourceImpl(RegisterService registerService) {
-		this.registerService = registerService;
-	}
-	
-	@Override
-	public void register(Service service) throws RegisterException {
-		registerService.register(service);
-	}
+  private final RegisterService registerService;
 
-	@Override
-	public void unregister(String name, String version, String url) throws RegisterException {
-		ServiceId id = ServiceId.from(name, version);
-		Service service = Service.from(id, url);
-		registerService.unregister(service);
-	}
-	
-	@Override
-	public Service findOne(String name, String version) throws RegisterException {
-		ServiceId id = ServiceId.from(name, version);
-		return registerService.findOne(id).orElse(null);
-	}
+  @Inject
+  public ServiceResourceImpl(RegisterService registerService) {
+    this.registerService = registerService;
+  }
 
-	@Override
-	public Collection<Service> findAll(String name, String version) throws RegisterException {
-		ServiceId id = ServiceId.from(name, version);
-		return registerService.findAll(id);
-	}
+  @Override
+  public void register(Service service) throws RegisterException {
+    registerService.register(service);
+  }
 
-	@Override
-	@Produces(MediaType.TEXT_PLAIN)
-	public String test() throws RegisterException {
-		return "test";
-	}
+  @Override
+  public void unregister(String name, String version, String url) throws RegisterException {
+    ServiceId id = ServiceId.from(name, version);
+    Service service = Service.from(id, url);
+    registerService.unregister(service);
+  }
+
+  @Override
+  public Service findOne(String name, String version) throws RegisterException {
+    ServiceId id = ServiceId.from(name, version);
+    return registerService.findOne(id).orElse(null);
+  }
+
+  @Override
+  public Collection<Service> findAll(String name, String version) throws RegisterException {
+    ServiceId id = ServiceId.from(name, version);
+    return registerService.findAll(id);
+  }
+
+  @Override
+  @Produces(MediaType.TEXT_PLAIN)
+  public String test() throws RegisterException {
+    return "test";
+  }
 
 }

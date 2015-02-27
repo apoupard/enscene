@@ -10,7 +10,7 @@
 
 	<groupId>io.enscene.testing</groupId>
 	<artifactId>enscene-testing-parent</artifactId>
-	
+
 	<packaging>pom</packaging>
 
 	<modules>

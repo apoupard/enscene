@@ -10,7 +10,7 @@
 
 	<groupId>io.enscene.core</groupId>
 	<artifactId>enscene-core</artifactId>
-	
+
 	<packaging>pom</packaging>
 
 	<modules>

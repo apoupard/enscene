@@ -5,64 +5,61 @@ import com.google.common.base.Objects;
 
 class ServiceIdImpl implements ServiceId {
 
-	private String name;
-	private String version;
-	
-	public ServiceIdImpl(String name, String version) {
-		super();
-		this.name = name;
-		this.version = version;
-	}
+  private String name;
+  private String version;
 
-	ServiceIdImpl(Builder builder) {
-		this.name = builder.name;
-		this.version = builder.version;
-	}
+  public ServiceIdImpl(String name, String version) {
+    super();
+    this.name = name;
+    this.version = version;
+  }
 
-	@Override
-	@JsonProperty
-	public String getName() {
-		return this.name;
-	}
+  ServiceIdImpl(Builder builder) {
+    this.name = builder.name;
+    this.version = builder.version;
+  }
 
-	@Override
-	@JsonProperty
-	public String getVersion() {
-		return this.version;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
+  @Override
+  @JsonProperty
+  public String getName() {
+    return this.name;
+  }
 
-	public void setVersion(String version) {
-		this.version = version;
-	}
+  @Override
+  @JsonProperty
+  public String getVersion() {
+    return this.version;
+  }
 
-	@Override
-	public int hashCode() {
-		return Objects.hashCode(this.name, this.version);
-	}
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	@Override
-	public boolean equals(Object obj) {
-		 if (obj == null) {  
-	         return false;  
-	      }  
-	      if (getClass() != obj.getClass()) {  
-	         return false;  
-	      }  
-	      final ServiceIdImpl other = (ServiceIdImpl) obj;  
-	      return Objects.equal(this.name, other.name) && Objects.equal(this.version, other.version);
-	}
+  public void setVersion(String version) {
+    this.version = version;
+  }
 
-	@Override
-	public String toString() {
-		return Objects.toStringHelper(this)
-				.addValue(name)
-				.addValue(version)
-				.toString();
-	}
-	
-	
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(this.name, this.version);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final ServiceIdImpl other = (ServiceIdImpl) obj;
+    return Objects.equal(this.name, other.name) && Objects.equal(this.version, other.version);
+  }
+
+  @Override
+  public String toString() {
+    return Objects.toStringHelper(this).addValue(name).addValue(version).toString();
+  }
+
+
 }

@@ -15,29 +15,28 @@ import javax.ws.rs.Produces;
 @Produces({"application/json"})
 public interface ServiceRessource {
 
-	@GET
-	@Path("/test")
-	public String test() throws RegisterException;
-	
-	
-	@POST
-	public void register(Service service) throws RegisterException;
-	
-	
-	@DELETE
-	@Path("/{name}/{version}/{url}")
-	public void unregister(
-			@PathParam("name") String name, 
-			@PathParam("version") String version, 
-			@PathParam("url") String url
-	) throws RegisterException;
-	
-	@GET
-	@Path("/{name}/{version}/instance")
-	Service findOne(@PathParam("name") String name, @PathParam("version") String version) throws RegisterException;
+  @GET
+  @Path("/test")
+  public String test() throws RegisterException;
 
-	@GET
-	@Path("/{name}/{version}/instances")
-	Collection<Service> findAll(@PathParam("name") String name, @PathParam("version") String version) throws RegisterException;
+
+  @POST
+  public void register(Service service) throws RegisterException;
+
+
+  @DELETE
+  @Path("/{name}/{version}/{url}")
+  public void unregister(@PathParam("name") String name, @PathParam("version") String version,
+      @PathParam("url") String url) throws RegisterException;
+
+  @GET
+  @Path("/{name}/{version}/instance")
+  Service findOne(@PathParam("name") String name, @PathParam("version") String version)
+      throws RegisterException;
+
+  @GET
+  @Path("/{name}/{version}/instances")
+  Collection<Service> findAll(@PathParam("name") String name, @PathParam("version") String version)
+      throws RegisterException;
 
 }
