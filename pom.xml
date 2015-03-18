@@ -18,7 +18,6 @@
 	<modules>
 		<module>core</module>
 		<module>testing</module>
-		<module>register</module>
 	</modules>
 
 </project>
